@@ -1,0 +1,9 @@
+package com.bhargavaroyal.javalib.designpattern.behavioral.mvc;
+
+public class StudentView {
+	public void printStudentDetails(String studentName, String studentRollNo) {
+		System.out.println("Student: ");
+		System.out.println("Name: " + studentName);
+		System.out.println("Roll No: " + studentRollNo);
+	}
+}

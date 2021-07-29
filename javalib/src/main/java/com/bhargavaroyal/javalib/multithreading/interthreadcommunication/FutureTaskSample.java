@@ -4,7 +4,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
 
 public class FutureTaskSample {
-
+/*
     public static void main(String[] args) throws Exception
     {
 
@@ -35,6 +35,6 @@ public class FutureTaskSample {
             // like when it is interrupted. This is the reason
             // for adding the throws clause to main
         }
-    }
+    }*/
 
 }
