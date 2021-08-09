@@ -3,7 +3,7 @@ package com.bhargavaroyal.javalib.designpattern.structural.flyweight;
 import java.util.HashMap;
 
 public class ShapeFactory {
-	private static final HashMap<String, Shape> circleMap = new HashMap();
+/*	private static final HashMap<String, Shape> circleMap = new HashMap();
 
 	public static Shape getCircle(String color) {
 		Circle circle = (Circle) circleMap.get(color);
@@ -14,5 +14,5 @@ public class ShapeFactory {
 			System.out.println("Creating circle of color : " + color);
 		}
 		return circle;
-	}
+	}*/
 }

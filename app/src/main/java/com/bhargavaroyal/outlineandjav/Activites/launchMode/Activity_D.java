@@ -1,4 +1,4 @@
-package com.bhargavaroyal.outlineandjav.launchMode;
+package com.bhargavaroyal.outlineandjav.Activites.launchMode;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -6,18 +6,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.bhargavaroyal.myapplication.R;
 
-public class Activity_B extends BaseActivity {
+public class Activity_D  {
+/*
 
-    private static final String TAG=Activity_B.class.getSimpleName();
+    private static final String TAG=Activity_D.class.getSimpleName();
     private static int instanceCounter=0;
     private int currentInstanceValue;
 
     private Button buttonStartActivityA,buttonStartActivityB,buttonStartActivityC,buttonStartActivityD;
-    private TextView textViewTaskInfo, textViewInstanceValue;
+    private TextView textViewTaskInfo,textViewInstanceValue;
 
-    public Activity_B(){
+    public Activity_D(){
         super();
         instanceCounter++;
         currentInstanceValue=instanceCounter;
@@ -26,7 +26,7 @@ public class Activity_B extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_b);
+        setContentView(R.layout.activity_d);
 
         buttonStartActivityA=(Button)findViewById(R.id.buttonStartActivityA);
         buttonStartActivityB=(Button)findViewById(R.id.buttonStartActivityB);
@@ -41,7 +41,6 @@ public class Activity_B extends BaseActivity {
         buttonStartActivityB.setOnClickListener(this);
         buttonStartActivityC.setOnClickListener(this);
         buttonStartActivityD.setOnClickListener(this);
-
     }
 
     @Override
@@ -58,15 +57,8 @@ public class Activity_B extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Log.i("TPV_123"," On Resume Instances: "+currentInstanceValue);
+        Log.i(TAG,"Instances: "+currentInstanceValue);
         textViewTaskInfo.setText(getAppTaskState());
-
-
     }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i("TPV_123","OnPause Instances: "+currentInstanceValue);
-    }
+*/
 }

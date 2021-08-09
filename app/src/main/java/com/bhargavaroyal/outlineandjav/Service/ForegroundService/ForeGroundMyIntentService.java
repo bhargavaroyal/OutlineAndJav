@@ -1,4 +1,4 @@
-package com.bhargavaroyal.outlineandjav.ForegroundService;
+package com.bhargavaroyal.outlineandjav.Service.ForegroundService;
 
 import android.app.IntentService;
 import android.app.Notification;
@@ -8,9 +8,11 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import com.bhargavaroyal.outlineandjav.R;
+
 import java.util.Random;
 
-public class MyIntentService extends IntentService{
+public class ForeGroundMyIntentService extends IntentService{
 
     private int mRandomNumber;
     private boolean mIsRandomGeneratorOn;
@@ -18,8 +20,8 @@ public class MyIntentService extends IntentService{
     private final int MIN=0;
     private final int MAX=100;
 
-    public MyIntentService(){
-        super(MyIntentService.class.getSimpleName());
+    public ForeGroundMyIntentService(){
+        super(ForeGroundMyIntentService.class.getSimpleName());
     }
 
     @Override
@@ -51,7 +53,7 @@ public class MyIntentService extends IntentService{
     }
 
     private Notification getNotification(){
-        return MyApplication.getMyAppsNotificationManager().getNotification(MainActivity.class,
+        return ForeGroundApplication.getMyAppsNotificationManager().getNotification(ForeGroundServiceActivity.class,
                 "BackgroundService running",
                 1,
                 false,

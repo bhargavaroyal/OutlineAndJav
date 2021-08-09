@@ -1,4 +1,4 @@
-package com.bhargavaroyal.outlineandjav.launchMode;
+package com.bhargavaroyal.outlineandjav.Activites.launchMode;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -6,28 +6,28 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.bhargavaroyal.myapplication.R;
 
-public class Activity_A extends BaseActivity{
+public class Activity_C  {
+/*
 
-    private static final String TAG=Activity_A.class.getSimpleName();
+    private static final String TAG=Activity_C.class.getSimpleName();
     private static int instanceCounter=0;
     private int currentInstanceValue;
 
     private Button buttonStartActivityA,buttonStartActivityB,buttonStartActivityC,buttonStartActivityD;
-    private TextView textViewTaskInfo,textViewInstanceValue;
+    private TextView textViewTaskInfo, textViewInstanceValue;
 
-    public Activity_A(){
+    public Activity_C(){
         super();
         instanceCounter++;
         currentInstanceValue=instanceCounter;
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_a);
-
+        setContentView(R.layout.activity_c);
         buttonStartActivityA=(Button)findViewById(R.id.buttonStartActivityA);
         buttonStartActivityB=(Button)findViewById(R.id.buttonStartActivityB);
         buttonStartActivityC=(Button)findViewById(R.id.buttonStartActivityC);
@@ -41,6 +41,8 @@ public class Activity_A extends BaseActivity{
         buttonStartActivityB.setOnClickListener(this);
         buttonStartActivityC.setOnClickListener(this);
         buttonStartActivityD.setOnClickListener(this);
+
+
     }
 
     @Override
@@ -60,4 +62,5 @@ public class Activity_A extends BaseActivity{
         Log.i(TAG,"Instances: "+currentInstanceValue);
         textViewTaskInfo.setText(getAppTaskState());
     }
+*/
 }

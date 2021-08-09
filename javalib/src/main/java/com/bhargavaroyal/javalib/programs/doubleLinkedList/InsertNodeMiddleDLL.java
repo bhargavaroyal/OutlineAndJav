@@ -1,4 +1,20 @@
 package com.bhargavaroyal.javalib.programs.doubleLinkedList;
+
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.ListIterator;
+import java.util.PriorityQueue;
+import java.util.TreeMap;
+import java.util.TreeSet;
+import java.util.Vector;
+
 /*Input:
 #Add nodes to the list
 dList.addNode(1);
@@ -38,7 +54,7 @@ Algorithm
 2.	Print current.data till current points to null.
 3.	Current will point to the next node in the list in each iteration.
 */
-public class InsertNodeMiddleDLL {
+public class InsertNodeMiddleDLL  {
     /*    //Represent a node of the doubly linked list
 
     class Node{

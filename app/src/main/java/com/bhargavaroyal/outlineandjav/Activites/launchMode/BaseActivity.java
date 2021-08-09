@@ -1,4 +1,4 @@
-package com.bhargavaroyal.outlineandjav.launchMode;
+package com.bhargavaroyal.outlineandjav.Activites.launchMode;
 
 import android.app.Activity;
 import android.app.ActivityManager;

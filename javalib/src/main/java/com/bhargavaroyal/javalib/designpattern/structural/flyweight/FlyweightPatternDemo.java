@@ -1,7 +1,7 @@
 package com.bhargavaroyal.javalib.designpattern.structural.flyweight;
 
 public class FlyweightPatternDemo {
-	private static final String colors[] = { "Red", "Green", "Blue", "White",
+	/*private static final String colors[] = { "Red", "Green", "Blue", "White",
 			"Black" };
 
 	public static void main(String[] args) {
@@ -25,5 +25,5 @@ public class FlyweightPatternDemo {
 
 	private static int getRandomY() {
 		return (int) (Math.random() * 100);
-	}
+	}*/
 }

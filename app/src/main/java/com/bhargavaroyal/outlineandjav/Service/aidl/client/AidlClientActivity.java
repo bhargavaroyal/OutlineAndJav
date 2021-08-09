@@ -1,21 +1,6 @@
-package com.bhargavaroyal.outlineandjav.aidl.client;
+package com.bhargavaroyal.outlineandjav.Service.aidl.client;
 
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.util.Log;
-import android.view.View;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.List;
-
-public class MainActivity/* extends AppCompatActivity*/ {
+public class AidlClientActivity/* extends AppCompatActivity*/ {
     /*
     public static final String TAG = "MainClient";
     private IMyAidlInterface iMyAidlInterface;

@@ -1,24 +1,25 @@
-package com.bhargavaroyal.outlineandjav.launchMode;
+package com.bhargavaroyal.outlineandjav.Activites.launchMode;
 
-import android.Manifest;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.bhargavaroyal.myapplication.R;
+import com.bhargavaroyal.outlineandjav.R;
 
-public class Activity_D extends BaseActivity {
 
-    private static final String TAG=Activity_D.class.getSimpleName();
+public class Activity_A {
+/*
+
+    private static final String TAG=Activity_A.class.getSimpleName();
     private static int instanceCounter=0;
     private int currentInstanceValue;
 
     private Button buttonStartActivityA,buttonStartActivityB,buttonStartActivityC,buttonStartActivityD;
     private TextView textViewTaskInfo,textViewInstanceValue;
 
-    public Activity_D(){
+    public Activity_A(){
         super();
         instanceCounter++;
         currentInstanceValue=instanceCounter;
@@ -27,7 +28,7 @@ public class Activity_D extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_d);
+        setContentView(R.layout.activity_a);
 
         buttonStartActivityA=(Button)findViewById(R.id.buttonStartActivityA);
         buttonStartActivityB=(Button)findViewById(R.id.buttonStartActivityB);
@@ -61,4 +62,5 @@ public class Activity_D extends BaseActivity {
         Log.i(TAG,"Instances: "+currentInstanceValue);
         textViewTaskInfo.setText(getAppTaskState());
     }
+*/
 }

@@ -18,44 +18,44 @@ Android Framework
 An activity represents a single screen in your app with an interface the user can interact with.
 
 To implement an Activity in your app, do the following: 
-•	Create an Activity Java class.
-•	Implement a basic UI for the Activity in an XML layout file.
-•	Declare the new Activity in the AndroidManifest.xml file. 
+ï¿½	Create an Activity Java class.
+ï¿½	Implement a basic UI for the Activity in an XML layout file.
+ï¿½	Declare the new Activity in the AndroidManifest.xml file. 
 	
         ? Activity Lifecycle
-            •	onCreate()   (the only Activity method that must be implemented)
-                    • Must be implemented
-                    • Call setContentView()
-                    • Initialize display layout
-                    • Initialize variables
-                    • Start Background Thread
-            •	onStart()
-                    • Register Broadcast Receiver
-                    • Reinitialize states
-            •	onRestart()
-                    • Open server connections
-                    • Allocate Resources
-            •	onResume()
-                    • Register Broadcast Receivers
-                    • Restore variables
-                    • Restart animations
-                    • lightweight code
-            •	--------------- Activity running
-            •	onPause()
-                    • commit changes
-                    • save variables
-                    • save preferences
-                    • stop animations
-                    • unregister BroadcastReceivers
-                    • lightweight code
-            •	onStop()
-                    • close server connections
-                    • free resources
-                    • unregister Broadcast receiver
-            •	onDestroy()
-                    • close Databases
-                    • Release Remaining resources
-                    • Stop Background Thread
+            ï¿½	onCreate()   (the only Activity method that must be implemented)
+                    ï¿½ Must be implemented
+                    ï¿½ Call setContentView()
+                    ï¿½ Initialize display layout
+                    ï¿½ Initialize variables
+                    ï¿½ Start Background Thread
+            ï¿½	onStart()
+                    ï¿½ Register Broadcast Receiver
+                    ï¿½ Reinitialize states
+            ï¿½	onRestart()
+                    ï¿½ Open server connections
+                    ï¿½ Allocate Resources
+            ï¿½	onResume()
+                    ï¿½ Register Broadcast Receivers
+                    ï¿½ Restore variables
+                    ï¿½ Restart animations
+                    ï¿½ lightweight code
+            ï¿½	--------------- Activity running
+            ï¿½	onPause()
+                    ï¿½ commit changes
+                    ï¿½ save variables
+                    ï¿½ save preferences
+                    ï¿½ stop animations
+                    ï¿½ unregister BroadcastReceivers
+                    ï¿½ lightweight code
+            ï¿½	onStop()
+                    ï¿½ close server connections
+                    ï¿½ free resources
+                    ï¿½ unregister Broadcast receiver
+            ï¿½	onDestroy()
+                    ï¿½ close Databases
+                    ï¿½ Release Remaining resources
+                    ï¿½ Stop Background Thread
 
 
 
@@ -74,45 +74,45 @@ To implement an Activity in your app, do the following:
 		(Launch mode)
 
     ? standard - The default behavior. Creates a new instance of the activity in the task.
-        • Default : Yes
-        • Instantiation : Everytime an intent is created, a new instance is created.
+        ï¿½ Default : Yes
+        ï¿½ Instantiation : Everytime an intent is created, a new instance is created.
                         Also instances can be member of multiple tasks and more than one instance in a Task.
-        • New Task on Launch : No. Open in the same Task that originated the intent
-        • Allow other activities within Task : Yes
+        ï¿½ New Task on Launch : No. Open in the same Task that originated the intent
+        ï¿½ Allow other activities within Task : Yes
 
     ? singleTop - Reuse an activity instance if already at the top of the stack; otherwise create new instance.
-        • Default : No
-        • Instantiation : Exactly like standard but if the activity is at the top of the Task stack
+        ï¿½ Default : No
+        ï¿½ Instantiation : Exactly like standard but if the activity is at the top of the Task stack
                         then it uses the existing instance.
-        • New Task on Launch : No. Open in the same Task that originated the intent
-        • Allow other activities within Task : Yes
-        • singleTop - While there can be multiple instances of the BrowserBookmarksPage if there is already
+        ï¿½ New Task on Launch : No. Open in the same Task that originated the intent
+        ï¿½ Allow other activities within Task : Yes
+        ï¿½ singleTop - While there can be multiple instances of the BrowserBookmarksPage if there is already
         one at the top of the task's activity stack it will be reused. This way you only have to hit back once
         to return to the browser if the bookmarks activity is started multiple times.
 
 
     ? singleTask - Reuse an activity instance if exists in an existing stack; otherwise create in a new task stack.
-        • Default : No
-        • Instantiation : Single instance
-        • New Task on Launch : Yes. Always a Root Task.
-        • Allow other activities within Task : Yes
-        • singleTask - There is only one BrowserActivity at a time and it doesn't become part of tasks
+        ï¿½ Default : No
+        ï¿½ Instantiation : Single instance
+        ï¿½ New Task on Launch : Yes. Always a Root Task.
+        ï¿½ Allow other activities within Task : Yes
+        ï¿½ singleTask - There is only one BrowserActivity at a time and it doesn't become part of tasks
         that send it intents to open web pages. While it might return to whatever most recently launched
         it when you hit back it is actually fixed at the bottom of its own task activity stack.
 
     ? singleInstance - Same as singleTask but no other activities are ever inserted into the created task stack.
-        • Default : No
-        • Instantiation : Single instance
-        • New Task on Launch : Yes. Always a Root Task.
-        • Allow other activities within Task : Never. Always the only activity in the task
-        • singleInstance - Only one AlarmAlert activity at a time and it is always its own task.
+        ï¿½ Default : No
+        ï¿½ Instantiation : Single instance
+        ï¿½ New Task on Launch : Yes. Always a Root Task.
+        ï¿½ Allow other activities within Task : Never. Always the only activity in the task
+        ï¿½ singleInstance - Only one AlarmAlert activity at a time and it is always its own task.
         Anything it might launch (if anything) becomes a part of a separate task stack.
 
-        •	FLAG_ACTIVITY_CLEAR_TASK - Clear any existing tasks on this stack before starting the activity.
-        •	FLAG_ACTIVITY_NEW_TASK - Start the activity in a new task or reuse an existing task tied to that activity.
-        •	FLAG_ACTIVITY_SINGLE_TOP - If the activity being started is the same as the current activity, then reuses
+        ï¿½	FLAG_ACTIVITY_CLEAR_TASK - Clear any existing tasks on this stack before starting the activity.
+        ï¿½	FLAG_ACTIVITY_NEW_TASK - Start the activity in a new task or reuse an existing task tied to that activity.
+        ï¿½	FLAG_ACTIVITY_SINGLE_TOP - If the activity being started is the same as the current activity, then reuses
                                         the existing instance which receives a call to onNewIntent()
-        •	FLAG_ACTIVITY_CLEAR_TOP - If the activity being started is already running in the current task, delivers us back
+        ï¿½	FLAG_ACTIVITY_CLEAR_TOP - If the activity being started is already running in the current task, delivers us back
                                         to the existing instance and clears the stack.
         There are almost a dozen other flags you can set as well, for example
         FLAG_ACTIVITY_BROUGHT_TO_FRONT,
@@ -121,30 +121,30 @@ To implement an Activity in your app, do the following:
 
 
     o Service
-         •	Foreground Service
+         ï¿½	Foreground Service
 		 Foreground services are those services that are visible to the users. 
-		 The users can interact with them at ease and track what’s happening. 
+		 The users can interact with them at ease and track whatï¿½s happening. 
 		 These services continue to run even when users are using other applications.
 			The perfect example of this is Music Player and Downloading.
 		 
-         •	Background Service
-		These services run in the background, such that the user can’t see or access them. 
-		These are the tasks that don’t need the user to know them.
+         ï¿½	Background Service
+		These services run in the background, such that the user canï¿½t see or access them. 
+		These are the tasks that donï¿½t need the user to know them.
 		Syncing and Storing data can be the best example.
 		 
-         •	Bound Service
+         ï¿½	Bound Service
 		 Bound service runs as long as some other application component is bound to it. 
 		 Many components can bind to one service at a time, but once they all unbind, the service will destroy.
 		 To bind an application component to the service, bindService() is used.
 		 
-		 • Lifecycle of Android Services
+		 ï¿½ Lifecycle of Android Services
 		 	 
 			Started Service: A service becomes started only when an application component calls startService(). 
-							It performs a single operation and doesn’t return any result to the caller. 
+							It performs a single operation and doesnï¿½t return any result to the caller. 
 							Once this service starts, it runs in the background even if the component that created it destroys. 
 							This service can be stopped only in one of the two cases:
-								• By using the stopService() method.
-								• By stopping itself using the stopSelf() method.
+								ï¿½ By using the stopService() method.
+								ï¿½ By stopping itself using the stopSelf() method.
 
 			
 			Bounded Service: A service is bound only if an application component binds to it using bindService().
@@ -153,11 +153,11 @@ To implement an Activity in your app, do the following:
 		
 		Methods of Android Services 
 			
-			• onStartCommand()
-				The system calls this method whenever a component, say an activity requests ‘start’ to a service, using startService().
-				Once we use this method it’s our duty to stop the service using stopService() or stopSelf().
+			ï¿½ onStartCommand()
+				The system calls this method whenever a component, say an activity requests ï¿½startï¿½ to a service, using startService().
+				Once we use this method itï¿½s our duty to stop the service using stopService() or stopSelf().
 				
-			• onBind()
+			ï¿½ onBind()
 				This is invoked when a component wants to bind with the service by calling bindService(). 
 				In this, we must provide an interface for clients to communicate with the service. 
 				For interprocess communication, we use the IBinder object.
@@ -165,27 +165,27 @@ To implement an Activity in your app, do the following:
 				It is a must to implement this method. If in case binding is not required, 
 				we should return null as implementation is mandatory.
 				
-			• onCreate()
+			ï¿½ onCreate()
 				This is the first callback method that the system calls when a new component starts the service. 
 				We need this method for a one-time set-up.
 			
-			• onUnbind()
+			ï¿½ onUnbind()
 				The system invokes this when all the clients disconnect from the interface published by the service.
 				
-			• onDestroy()
+			ï¿½ onDestroy()
 				This method is the final clean up call for the system. The system invokes it just before the service destroys. 
 				It cleans up resources like threads, receivers, registered listeners, etc.
 			
-			• onRebind()
+			ï¿½ onRebind()
 				The system calls this method when new clients connect to the service. The system calls it after the onBind() method.
 
 		
 		 
 		 
 		 
-         •	Android Interface Definition Language (AIDL)
+         ï¿½	Android Interface Definition Language (AIDL)
 
-         • IntentService
+         ï¿½ IntentService
         IntentService is a base class for Services that handle asynchronous requests (expressed as Intents) on demand.
         Clients send requests through startService(Intent) calls; the service is started as needed,
         handles each Intent in turn using a worker thread, and stops itself when it runs out of work.
@@ -193,15 +193,15 @@ To implement an Activity in your app, do the following:
 		Certain important features of Intent are :
 
     It queues up the upcoming request and executes them one by one.
-    Once the queue is empty it stops itself, without the user’s intervention in its lifecycle.
+    Once the queue is empty it stops itself, without the userï¿½s intervention in its lifecycle.
     It does proper thread management by handling the requests on a separate thread.
 
 
 
     o Broadcast Receiver
-         • static receiver : To register a receiver statically, use the <receiver> element in your AndroidManifest.xml file.
+         ï¿½ static receiver : To register a receiver statically, use the <receiver> element in your AndroidManifest.xml file.
                              Static receivers are also called manifest-declared receivers.
-         • dynamic receiver : To register a receiver dynamically, use the app context or activity context.
+         ï¿½ dynamic receiver : To register a receiver dynamically, use the app context or activity context.
                               The receiver receives broadcasts as long as the registering context is valid, meaning
                               as long as the corresponding app or activity is running.
                               Dynamic receivers are also called context-registered receivers.
@@ -219,11 +219,12 @@ To implement an Activity in your app, do the following:
             Custom broadcasts are delivered by your app.
 
     Android provides three ways for your app to send custom broadcasts:
-    •  Normal broadcasts are asynchronous. Receivers of normal broadcasts run in an undefined order, often at the same time.
+    ï¿½  Normal broadcasts are asynchronous. Receivers of normal broadcasts run in an undefined order, often at the same time.
                         To send a normal broadcast, create a broadcast intent and pass it to sendBroadcast(Intent).
-    •  Local broadcasts are sent to receivers that are in the same app as the sender.
+    ï¿½  Local broadcasts are sent to receivers that are in the same app as the sender.
                         To send a local broadcast, create a broadcast intent and pass it to LocalBroadcastManager.sendBroadcast.
-    •  Ordered broadcasts are delivered to one receiver at a time. As each receiver executes, it can propagate a result to the next receiver,
+    ï¿½  Ordered broadcasts are delivered to one receiver at a time. As each receiver executes, it can propagate a result
+    to the next receiver,
                         or it can cancel the broadcast so that the broadcast is not passed to other receivers.
                         To send an ordered broadcast, create a broadcast intent and pass it to sendOrderedBroadcast(Intent, String).
 
@@ -232,11 +233,11 @@ To implement an Activity in your app, do the following:
     o  Intent :
     An intent is a message that can be thought of as a request that is
     given to either an activity within your own app, an external application, or a built-in Android service.
-        •	Explicit Intents : An "explicit" intent is used to launch other activities within your application.
-        •	Implicit Intents : Implicit Intents are requests to perform an action based on a desired action and target data.
+        ï¿½	Explicit Intents : An "explicit" intent is used to launch other activities within your application.
+        ï¿½	Implicit Intents : Implicit Intents are requests to perform an action based on a desired action and target data.
                                Phone Call, Send Email (to Phone Email Client), Send Email (to Gmail), Launch Website, Open Google Play Store
                                Compose SMS, Google Maps, Capture Photo, Sharing Content
-        •	PendingIntent is a token that you give to another application (e.g. Notification Manager, Alarm Manager or other 3rd party applications),
+        ï¿½	PendingIntent is a token that you give to another application (e.g. Notification Manager, Alarm Manager or other 3rd party applications),
          which allows this other application to use the permissions of your application to execute a predefined piece of code.
         To perform a broadcast via a pending intent so get a PendingIntent via PendingIntent.getBroadcast().
         To perform an activity via an pending intent you receive the activity via PendingIntent.getActivity().
@@ -247,9 +248,9 @@ To implement an Activity in your app, do the following:
               Notifications appear in the phone's notification area and then can be expanded to see more information.
 
             At the minimum, all notifications consist of a base layout including:
-            •	Icon of the app or relevant user image
-            •	Title and message
-            •	Timestamp
+            ï¿½	Icon of the app or relevant user image
+            ï¿½	Title and message
+            ï¿½	Timestamp
 
     o Creating a Notification
         NotificationCompat.Builder mBuilder =
@@ -336,7 +337,7 @@ To implement an Activity in your app, do the following:
             String cookieName = mSettings.getString("cookieName", "missing");
 
         commit() writes the data synchronously and returns a boolean value of success or failure depending on the result immediately.
-        apply() is asynchronous and it won’t return any boolean response. Also if there is an apply() outstanding and
+        apply() is asynchronous and it wonï¿½t return any boolean response. Also if there is an apply() outstanding and
         we perform another commit().
         The commit() will be blocked until the apply() is not completed.
 
@@ -347,14 +348,14 @@ Managing Threads and Custom Services
 
         Thread Management :
             o Using an AsyncTask:
-                • Description : Sequentially runs short tasks updating the UI
-                • Built On : ThreadPoolExecutor
+                ï¿½ Description : Sequentially runs short tasks updating the UI
+                ï¿½ Built On : ThreadPoolExecutor
             o Using a HandlerThread:
-                • Description : Sequentially runs tasks on a single thread
-                • Built On : Handler, Looper
+                ï¿½ Description : Sequentially runs tasks on a single thread
+                ï¿½ Built On : Handler, Looper
             o Executing Runnables on HandlerThread:
-                • Description : Concurrently runs tasks using a thread pool
-                • Built On : Executor, ExecutorService
+                ï¿½ Description : Concurrently runs tasks using a thread pool
+                ï¿½ Built On : Executor, ExecutorService
 
       o 1 Async Tasks
                 AsyncTask allows you to perform asynchronous work on your user interface.
@@ -371,16 +372,16 @@ Managing Threads and Custom Services
             4.	Post - Execute code on UI thread following completion of the task (e.g show data)
 
         AsyncTask accepts three generic types to inform the background work being done:
-        •	AsyncTask<Params, Progress, Result>
+        ï¿½	AsyncTask<Params, Progress, Result>
             o	Params - the type that is passed into the execute() method.
             o	Progress - the type that is used within the task to track progress.
             o	Result - the type that is returned by doInBackground().
 
         AsyncTask has multiple events that can be overridden to control different behavior:
-            •	onPreExecute - executed in the main thread to do things like create the initial progress bar view.
-            •	doInBackground - executed in the background thread to do things like network downloads.
-            •	onProgressUpdate - executed in the main thread when publishProgress is called from doInBackground.
-            •	onPostExecute - executed in the main thread to do things like set image views.
+            ï¿½	onPreExecute - executed in the main thread to do things like create the initial progress bar view.
+            ï¿½	doInBackground - executed in the background thread to do things like network downloads.
+            ï¿½	onProgressUpdate - executed in the main thread when publishProgress is called from doInBackground.
+            ï¿½	onPostExecute - executed in the main thread to do things like set image views.
 
       o 2 Using a HandlerThread
             HandlerThread is a handy class for starting up a new worker thread that sequentially runs tasks.
@@ -448,7 +449,7 @@ Managing Threads and Custom Services
 
 
       o 3 Using a ThreadPoolExecutor
-            • Constructing the ThreadPoolExecutor
+            ï¿½ Constructing the ThreadPoolExecutor
               Using a ThreadPoolExecutor starts with constructing a new instance along with many arguments configuring the thread pool:
               // Determine the number of cores on the device
               int NUMBER_OF_CORES = Runtime.getRuntime().availableProcessors();
@@ -465,7 +466,7 @@ Managing Threads and Custom Services
               If you are initializing ThreadPoolExecutor within a service, make sure to create it within onStartCommand().
               Putting it in onCreate() will likely trigger RequestRejectedException errors.
 
-            • Executing Runnables on ThreadPoolExecutor
+            ï¿½ Executing Runnables on ThreadPoolExecutor
                 we can queue up a Runnable code block to execute on a thread in the pool with:
                 // Executes a task on a thread in the thread pool
                 executor.execute(new Runnable() {
@@ -477,7 +478,7 @@ Managing Threads and Custom Services
                 Threads are used to process each runnable concurrently as the message is received until all threads are busy.
                 If all threads are currently busy, the Executor will queue a new task until a thread becomes available.
 
-            • Stopping the ThreadPoolExecutor
+            ï¿½ Stopping the ThreadPoolExecutor
                 The thread pool can be shutdown any time with the shutdown command:
                 executor.shutdown();
 
@@ -555,13 +556,13 @@ RecyclerView:
        use ListView or GridView for displaying custom items then we create a custom xml file and then use it inside our Adapter.
        For this we create a CustomAdapter class and then extends our Base or any other Adapter in it.
        In getView() method of our Adapter we inflate the item layout xml file and then give the reference of every view by using the
-        unique id’s we provide in our xml file .
+        unique idï¿½s we provide in our xml file .
         Once finished we pass that view to the ListView, ready to be drawn, but the truth is that ListView
         and GridView do only half the job of achieving true memory efficiency.
 
-    2. ListView/GridView recycle the item layout but don’t keep the reference to the layout children, forcing us to call findViewById()
+    2. ListView/GridView recycle the item layout but donï¿½t keep the reference to the layout children, forcing us to call findViewById()
     for every child of our item layout for every time we call getView(). This issue causes the scrolling or non responsive problem as
-    it frantically tries to grab references to the view’s we needed.
+    it frantically tries to grab references to the viewï¿½s we needed.
 
     3. With the arrival of RecyclerView everything is changed. RecyclerView still uses Adapter to act as Data source but in this
     we have to create a ViewHolder to keep the reference of View in memory, so when we need a new view it either creates a new
@@ -584,10 +585,10 @@ If you want to use a RecyclerView, you will need to work with the following:
 Components of RecyclerView In Android
 
     1. LayoutManager - Helps in positioning the items
-                       Linear Layout Manager – It is used for displaying the data items in a horizontal or vertical scrolling List
+                       Linear Layout Manager ï¿½ It is used for displaying the data items in a horizontal or vertical scrolling List
                                 LinearLayoutManager(Context context, int orientation, boolean reverseLayout)
-                       GridLayoutManager – It is used to show the items in grid format
-                       StaggeredGridLayoutManager – It is used to show the items in staggered Grid.
+                       GridLayoutManager ï¿½ It is used to show the items in grid format
+                       StaggeredGridLayoutManager ï¿½ It is used to show the items in staggered Grid.
     2. ViewHolder:
     3. RecyclerView.Adapter: To handle the data collection and bind it to the view.
                             override: 1. onCreateViewHolder: inflate the view
@@ -618,32 +619,32 @@ ItemAnimator 	Animates items when they are added, removed or reordered
 -----------------------------------------------------------------
                         Android Testing Options
     Unit Testing
-        •	Robolectric - Popular Android unit test framework that allows faster test execution by running tests on the JVM
+        ï¿½	Robolectric - Popular Android unit test framework that allows faster test execution by running tests on the JVM
                             (no device or emulator needed).
-        •	JUnit - Popular Java unit test framework. Most of the Android test frameworks are built on top of JUnit.
+        ï¿½	JUnit - Popular Java unit test framework. Most of the Android test frameworks are built on top of JUnit.
 
     Instrumentation Testing:
-        •	Espresso - Extensible Android UI Test Framework provided by Google that handles test synchronization very well.
-        •	UIAutomator - Android UI Test Framework provided by Google for testing across multiple apps at the same time.
-        •	Google Android Testing - This is the testing framework included as part of the platform.
-        •	Robotium - Third party Android UI Test Framework (comparison with Espresso)
-        •	Selendroid - Selenium for Android
+        ï¿½	Espresso - Extensible Android UI Test Framework provided by Google that handles test synchronization very well.
+        ï¿½	UIAutomator - Android UI Test Framework provided by Google for testing across multiple apps at the same time.
+        ï¿½	Google Android Testing - This is the testing framework included as part of the platform.
+        ï¿½	Robotium - Third party Android UI Test Framework (comparison with Espresso)
+        ï¿½	Selendroid - Selenium for Android
 
     Richer Validation Support : Simple JUnit assertions leave a lot to be desired when working on Android. The following libraries and
                                 classes help fill this gap.
-        •	Assertj-Android - An extension of AssertJ (fluent assertions for Java) extended for Android (formerly known as FEST Android).
-        •	MoreAsserts - Extension of JUnit assertions to add assertions for sets, lists, etc.
-        •	ViewAsserts - Helper methods to validate view layout
+        ï¿½	Assertj-Android - An extension of AssertJ (fluent assertions for Java) extended for Android (formerly known as FEST Android).
+        ï¿½	MoreAsserts - Extension of JUnit assertions to add assertions for sets, lists, etc.
+        ï¿½	ViewAsserts - Helper methods to validate view layout
 
     Mocking Frameworks
-        •	Mockito - Popular mocking framework for Java
-        •	EasyMock - Mocking framework that has record / replay support
+        ï¿½	Mockito - Popular mocking framework for Java
+        ï¿½	EasyMock - Mocking framework that has record / replay support
 
     Tools
-        •	Cloud Test Lab - Large bank of devices where you can submit your tests and have them run across different devices.
-        •	MonkeyRunner - API Toolkit that allows controlling the Android device from Python code.
-        •	Monkey - Program that runs on the device and performs random clicks, text input, etc.
-        •	Spoon - Run your tests across multiple devices at the same time and see aggregated reports / screenshots.
+        ï¿½	Cloud Test Lab - Large bank of devices where you can submit your tests and have them run across different devices.
+        ï¿½	MonkeyRunner - API Toolkit that allows controlling the Android device from Python code.
+        ï¿½	Monkey - Program that runs on the device and performs random clicks, text input, etc.
+        ï¿½	Spoon - Run your tests across multiple devices at the same time and see aggregated reports / screenshots.
 
 
 
@@ -675,172 +676,172 @@ ItemAnimator 	Animates items when they are added, removed or reordered
 
 
                     Convenience
-•	Dagger -            A fast dependency injector for Android and Java. See this video intro from Square.
-•	Spork -             Spork is an annotation processing library to speed up development on your projects. It allows you to
+ï¿½	Dagger -            A fast dependency injector for Android and Java. See this video intro from Square.
+ï¿½	Spork -             Spork is an annotation processing library to speed up development on your projects. It allows you to
                         write less boilerplate code to make your code more readable and maintainable.
-•	AutoParcel -        Port of Google AutoValue for Android with Parcelable generation goodies.
-•	Hugo -              Easier logging within your app
-•	Logger -            Much cleaner and easier logcat trace messages
-•	LeakCanary -        Easily catch memory leaks as they occur
-•	AndroidAnnotations - Framework that speeds up Android development. It takes care of the plumbing, and lets you concentrate on what's really important.
+ï¿½	AutoParcel -        Port of Google AutoValue for Android with Parcelable generation goodies.
+ï¿½	Hugo -              Easier logging within your app
+ï¿½	Logger -            Much cleaner and easier logcat trace messages
+ï¿½	LeakCanary -        Easily catch memory leaks as they occur
+ï¿½	AndroidAnnotations - Framework that speeds up Android development. It takes care of the plumbing, and lets you concentrate on what's really important.
 By simplifying your code, it facilitates its maintenance
-•	Calligraphy -       Custom fonts made easy
-•	EasyFonts -         Easy preloaded custom fonts in your app
-•	AndroidViewAnimations - Common property animations made easy
-•	AboutLibraries -    Automatically generates an About this app section, with a list of used libraries
-•	SDK Manager Plugin - Helpful plugin especially for group projects if you're missing an SDK version,
+ï¿½	Calligraphy -       Custom fonts made easy
+ï¿½	EasyFonts -         Easy preloaded custom fonts in your app
+ï¿½	AndroidViewAnimations - Common property animations made easy
+ï¿½	AboutLibraries -    Automatically generates an About this app section, with a list of used libraries
+ï¿½	SDK Manager Plugin - Helpful plugin especially for group projects if you're missing an SDK version,
                             haven't downloaded an API version, or your support library is updated.
-•	EasyDeviceInfo -    Get device information in a super easy way
+ï¿½	EasyDeviceInfo -    Get device information in a super easy way
 
                     Extensions
-•	RxJava - Reactive Extensions for the JVM
-•	EventBus - Android optimized event bus that simplifies communication between components.
-•	Tape - Tape is a collection of queue-related classes for Android and Java
-•	Priority Job Queue - Easier background tasks
-•	ACRA - Crash reporting made easy and free. Check the setup instructions and open-source backend.
+ï¿½	RxJava - Reactive Extensions for the JVM
+ï¿½	EventBus - Android optimized event bus that simplifies communication between components.
+ï¿½	Tape - Tape is a collection of queue-related classes for Android and Java
+ï¿½	Priority Job Queue - Easier background tasks
+ï¿½	ACRA - Crash reporting made easy and free. Check the setup instructions and open-source backend.
 
                     Networking
-•	Retrofit - A type-safe REST client for Android and Java which intelligently maps an API into a client interface using annotations.
-•	Picasso - A powerful image downloading and caching library for Android.
-•	Ion - Powerful asynchronous networking library. Download as a jar here.
-•	Android Async HTTP - Asynchronous networking client for loading remote content such as JSON.
-•	Volley - Google's HTTP library that makes networking for Android apps easier and most importantly, faster.
-•	OkHttp - Square's underlying networking library with support for asynchronous requests.
-•	Glide - Picasso image loading alternative endorsed by Google
-•	Android Universal Image Loader - Popular alternative for image loading that can replace Picasso or Glide.
-•	Fresco - An image management library from Facebook.
-•	Fast Android Networking -Fast Android Networking is a powerful library for doing any type of networking in
+ï¿½	Retrofit - A type-safe REST client for Android and Java which intelligently maps an API into a client interface using annotations.
+ï¿½	Picasso - A powerful image downloading and caching library for Android.
+ï¿½	Ion - Powerful asynchronous networking library. Download as a jar here.
+ï¿½	Android Async HTTP - Asynchronous networking client for loading remote content such as JSON.
+ï¿½	Volley - Google's HTTP library that makes networking for Android apps easier and most importantly, faster.
+ï¿½	OkHttp - Square's underlying networking library with support for asynchronous requests.
+ï¿½	Glide - Picasso image loading alternative endorsed by Google
+ï¿½	Android Universal Image Loader - Popular alternative for image loading that can replace Picasso or Glide.
+ï¿½	Fresco - An image management library from Facebook.
+ï¿½	Fast Android Networking -Fast Android Networking is a powerful library for doing any type of networking in
                              Android applications which is made on top of OkHttp Networking Layer.
 
                     ListView
-•	EasyListViewAdapters - Building multi-row-type listview made much cleaner & easier.
-•	GridListViewAdapters - Easily build unlimited Grid cards list like play-store. (ListView working as unlimited GridView)
-•	StickyListHeaders - An android library for section headers that stick to the top of a ListView
-•	PinnedListView - Pinned Section with ListView
-•	ListViewAnimations - Easy way to animate ListView items
-•	Cardslib - Card UI for Lists or Grids
-•	PullToRefresh-ListView - Easy to use pull-to-refresh functionality for ListViews. Download and install as a library project.
-•	QuickReturn - Reveal or hide a header or footer as the list is scrolled in a direction.
-•	Paginated Table - This is a table which allows dynamic paging for any list of objects. Icons can be added to columns as well
+ï¿½	EasyListViewAdapters - Building multi-row-type listview made much cleaner & easier.
+ï¿½	GridListViewAdapters - Easily build unlimited Grid cards list like play-store. (ListView working as unlimited GridView)
+ï¿½	StickyListHeaders - An android library for section headers that stick to the top of a ListView
+ï¿½	PinnedListView - Pinned Section with ListView
+ï¿½	ListViewAnimations - Easy way to animate ListView items
+ï¿½	Cardslib - Card UI for Lists or Grids
+ï¿½	PullToRefresh-ListView - Easy to use pull-to-refresh functionality for ListViews. Download and install as a library project.
+ï¿½	QuickReturn - Reveal or hide a header or footer as the list is scrolled in a direction.
+ï¿½	Paginated Table - This is a table which allows dynamic paging for any list of objects. Icons can be added to columns as well
                         as custom items such as check boxes and buttons.
 
                     RecyclerView
-•	UltimateRecyclerView - Augmented RecyclerView with refreshing, loading more, animation and many other features.
-•	AdvRecyclerView - Extended RecyclerView with swipe to dismiss, and draggable or expanding items.
-•	android-parallax-recyclerview - An adapter which could be used to achieve a parallax effect on RecyclerView.
-•	sticky-headers-recyclerview - Sticky Headers decorator for Android's RecyclerView.
-•	FastAdapter - Simplify and speed up the process of filling your RecyclerView with data
-•	ItemAnimators - RecyclerView animators to animate item add/remove/add/move
-•	GreedoLayout - Full aspect ratio grid LayoutManager for Android's RecyclerView
-•	RecyclerViewHelper - Provides the most common functions around recycler view like Swipe to dismiss, Drag and Drop, Divider in the ui,
+ï¿½	UltimateRecyclerView - Augmented RecyclerView with refreshing, loading more, animation and many other features.
+ï¿½	AdvRecyclerView - Extended RecyclerView with swipe to dismiss, and draggable or expanding items.
+ï¿½	android-parallax-recyclerview - An adapter which could be used to achieve a parallax effect on RecyclerView.
+ï¿½	sticky-headers-recyclerview - Sticky Headers decorator for Android's RecyclerView.
+ï¿½	FastAdapter - Simplify and speed up the process of filling your RecyclerView with data
+ï¿½	ItemAnimators - RecyclerView animators to animate item add/remove/add/move
+ï¿½	GreedoLayout - Full aspect ratio grid LayoutManager for Android's RecyclerView
+ï¿½	RecyclerViewHelper - Provides the most common functions around recycler view like Swipe to dismiss, Drag and Drop, Divider in the ui,
                          events for when item selected and when not selected, on-click listener for items.
 
                     Easy Navigation
-•	JazzyViewPager - Pager with more animations
-•	ParallaxPager - ViewPager with Parallax scrolling effects
-•	ParallaxHeaderViewPager - Another ViewPager with Parallax scrolling effects
-•	ParallaxPagerTransformer - A pager transformer for Android with parallax effect
-•	SlidingMenu - Library that allows developers to easily create applications with sliding menus like those made popular in the Google+,
+ï¿½	JazzyViewPager - Pager with more animations
+ï¿½	ParallaxPager - ViewPager with Parallax scrolling effects
+ï¿½	ParallaxHeaderViewPager - Another ViewPager with Parallax scrolling effects
+ï¿½	ParallaxPagerTransformer - A pager transformer for Android with parallax effect
+ï¿½	SlidingMenu - Library that allows developers to easily create applications with sliding menus like those made popular in the Google+,
                     YouTube, and Facebook apps.
-•	Android Satellite Menu - Radial menu which is configurable reminiscent of the "Path" menu style.
-•	ArcMenu - Alternate radial menu modeled after the "Path" menu style.
-•	AndroidSlidingUpPanel - Sliding Up Panel
-•	DraggablePanel - Panels that can be dragged
-•	MaterialDrawer - Easily add a Navigation Drawer with Material style and AccountSwitcher
+ï¿½	Android Satellite Menu - Radial menu which is configurable reminiscent of the "Path" menu style.
+ï¿½	ArcMenu - Alternate radial menu modeled after the "Path" menu style.
+ï¿½	AndroidSlidingUpPanel - Sliding Up Panel
+ï¿½	DraggablePanel - Panels that can be dragged
+ï¿½	MaterialDrawer - Easily add a Navigation Drawer with Material style and AccountSwitcher
 
                     UI Components
-•	SparkButton - Library to create buttons with Twitter's heart like animation.
-•	Crouton - Context-sensitive, configurable alert notices much better than toasts. Download jar from here. See working sample code
-•	BetterPickers - BetterPickers for easy input selection
-•	android-shape-imageview - Custom shaped android imageview components including bubble, star, heart, diamond.
-•	RoundedImageView - Easily round corners or create oval-shaped images with this popular library.
-•	Android StackBlur - Dynamically blur images
-•	Android Bootstrap - Bootstrap UI widgets
-•	PhotoView - ImageView that supports touch gestures
-•	ShowcaseView - Highlight the best bits of your app
-•	FadingActionBar - Cool actionbar fade effect
-•	AndroidViewAnimations - Easily apply common animations
-•	ProgressWheel - Better progress bar
-•	SmoothProgressBar - Horizontal indeterminate progress
-•	CircularFillableLoaders - Beautiful animated fillable loaders
-•	Rebound - Easy spring dynamics
-•	AndroidImageSlider - Animated image transitions
-•	FloatingActionButton - Material design floating buttons made easy
-•	Foursquare-CollectionPicker - Item Picker which looks like Foursquare Tastes picker
-•	NexusDialog - Create form dialogs easily
-•	dialogplus - Simple, easy dialogs
-•	Iconify - Easily embed icons into your app
-•	Android StepsView - A library to create StepsView for Android
-•	PhotoView - A library to pinch zoom in and zoom out and double tap zoom for Android
-•	Android-Iconics - Add many scalable and styleable icons into your app
-•	Scissors - An easy image cropping library developed by Lyft.
-•	Material-SearchView - Beautiful Material SearchView made simple.
-•	PersistentSearchBar - Implementation of a persistent search bar.
+ï¿½	SparkButton - Library to create buttons with Twitter's heart like animation.
+ï¿½	Crouton - Context-sensitive, configurable alert notices much better than toasts. Download jar from here. See working sample code
+ï¿½	BetterPickers - BetterPickers for easy input selection
+ï¿½	android-shape-imageview - Custom shaped android imageview components including bubble, star, heart, diamond.
+ï¿½	RoundedImageView - Easily round corners or create oval-shaped images with this popular library.
+ï¿½	Android StackBlur - Dynamically blur images
+ï¿½	Android Bootstrap - Bootstrap UI widgets
+ï¿½	PhotoView - ImageView that supports touch gestures
+ï¿½	ShowcaseView - Highlight the best bits of your app
+ï¿½	FadingActionBar - Cool actionbar fade effect
+ï¿½	AndroidViewAnimations - Easily apply common animations
+ï¿½	ProgressWheel - Better progress bar
+ï¿½	SmoothProgressBar - Horizontal indeterminate progress
+ï¿½	CircularFillableLoaders - Beautiful animated fillable loaders
+ï¿½	Rebound - Easy spring dynamics
+ï¿½	AndroidImageSlider - Animated image transitions
+ï¿½	FloatingActionButton - Material design floating buttons made easy
+ï¿½	Foursquare-CollectionPicker - Item Picker which looks like Foursquare Tastes picker
+ï¿½	NexusDialog - Create form dialogs easily
+ï¿½	dialogplus - Simple, easy dialogs
+ï¿½	Iconify - Easily embed icons into your app
+ï¿½	Android StepsView - A library to create StepsView for Android
+ï¿½	PhotoView - A library to pinch zoom in and zoom out and double tap zoom for Android
+ï¿½	Android-Iconics - Add many scalable and styleable icons into your app
+ï¿½	Scissors - An easy image cropping library developed by Lyft.
+ï¿½	Material-SearchView - Beautiful Material SearchView made simple.
+ï¿½	PersistentSearchBar - Implementation of a persistent search bar.
 
                     Drawing
-•	MPAndroidChart - A powerful Android chart view / graph view library, supporting line- bar- pie- radar- bubble- 
+ï¿½	MPAndroidChart - A powerful Android chart view / graph view library, supporting line- bar- pie- radar- bubble- 
 and candlestick charts as well as scaling, dragging and animations.
-•	HoloGraphLibrary - Newer graphing library
-•	EazeGraph - Another newer library with potential
-•	AndroidCharts - Easy to use charts
-•	AndroidGraphView - library to create flexible and nice-looking diagrams.
-•	AndroidPlot - plotting library for Android
-•	WilliamChart - Flexible charting library with useful motion capabilities.
-•	HelloCharts - Charts/graphs library for Android with support for scaling, scrolling and animations.
-•	Leonids - Simple and easy particle effects (See Tutorial)
-•	AChartEngine - This is a charting software library for Android applications
+ï¿½	HoloGraphLibrary - Newer graphing library
+ï¿½	EazeGraph - Another newer library with potential
+ï¿½	AndroidCharts - Easy to use charts
+ï¿½	AndroidGraphView - library to create flexible and nice-looking diagrams.
+ï¿½	AndroidPlot - plotting library for Android
+ï¿½	WilliamChart - Flexible charting library with useful motion capabilities.
+ï¿½	HelloCharts - Charts/graphs library for Android with support for scaling, scrolling and animations.
+ï¿½	Leonids - Simple and easy particle effects (See Tutorial)
+ï¿½	AChartEngine - This is a charting software library for Android applications
 
                     Image Processing
-•	AndroidPhotoFilters - Library to create interesting effects on any image of your choice. Comes with prebuilt great sample effects.
-•	android-gpuimage - Popular GPU Image Processing
-•	android-image-filter - Older image filtering library
-•	picasso-transformations - Library for processing images via Picasso
-•	glide-transformations - Process images via Glide
-•	ImageEffectFilter - Sample code for processing images.
-•	VidEffects - Apply manipulation effects to videos.
+ï¿½	AndroidPhotoFilters - Library to create interesting effects on any image of your choice. Comes with prebuilt great sample effects.
+ï¿½	android-gpuimage - Popular GPU Image Processing
+ï¿½	android-image-filter - Older image filtering library
+ï¿½	picasso-transformations - Library for processing images via Picasso
+ï¿½	glide-transformations - Process images via Glide
+ï¿½	ImageEffectFilter - Sample code for processing images.
+ï¿½	VidEffects - Apply manipulation effects to videos.
 
                     Scanning
-•	ZXing - Barcode or QR scanner
-•	ZXing Android Embedded - Alternative zxing scanner
-•	barcodescanner - Newer alternative
-•	CamView - ZXing alternative
-•	android-quick-response-code - Another alternative
+ï¿½	ZXing - Barcode or QR scanner
+ï¿½	ZXing Android Embedded - Alternative zxing scanner
+ï¿½	barcodescanner - Newer alternative
+ï¿½	CamView - ZXing alternative
+ï¿½	android-quick-response-code - Another alternative
 
                     Persistence
-•	ActiveAndroid
-•	DBFlow - A robust, powerful, and very simple ORM android database library with annotation processing.
-•	greenDAO
-•	SugarORM
-•	RxCache - Reactive caching library for Android
-•	ORMLite
-•	SQLBrite - Lightweight wrapper around SQLiteOpenHelper
-•	Cupboard - Popular take on SQL wrapper
-•	StorIO - Fresh take on a light SQL wrapper
-•	Realm
-•	NexusData
-•	Hawk - Persistent secure key/value store
-•	Poetry - Persist JSON directly into SQLite
-•	JDXA - The KISS ORM for Android - Simple, Non-intrusive, and Flexible
+ï¿½	ActiveAndroid
+ï¿½	DBFlow - A robust, powerful, and very simple ORM android database library with annotation processing.
+ï¿½	greenDAO
+ï¿½	SugarORM
+ï¿½	RxCache - Reactive caching library for Android
+ï¿½	ORMLite
+ï¿½	SQLBrite - Lightweight wrapper around SQLiteOpenHelper
+ï¿½	Cupboard - Popular take on SQL wrapper
+ï¿½	StorIO - Fresh take on a light SQL wrapper
+ï¿½	Realm
+ï¿½	NexusData
+ï¿½	Hawk - Persistent secure key/value store
+ï¿½	Poetry - Persist JSON directly into SQLite
+ï¿½	JDXA - The KISS ORM for Android - Simple, Non-intrusive, and Flexible
 
                         Compatibility
-•	NineOldAndroids - Fully compatible animation library that works with all versions of Android. Widely used. Download and install as a library project.
-•	HoloEverywhere - Backport Holo theme from Android 4.2 to 2.1+
-•	CropImage - Simple compatible cropping intent for images
+ï¿½	NineOldAndroids - Fully compatible animation library that works with all versions of Android. Widely used. Download and install as a library project.
+ï¿½	HoloEverywhere - Backport Holo theme from Android 4.2 to 2.1+
+ï¿½	CropImage - Simple compatible cropping intent for images
 
                         Scrolling and Parallax
 This is a list of popular scrolling and parallax libraries:
-•	QuickReturn - Reveal or hide a header or footer as the list is scrolled in a direction.
-•	ParallaxPagerTransformer - A pager transformer for Android with parallax effect
-•	ParallaxHeaderViewPager - Another ViewPager with Parallax scrolling effects
-•	Android-ObservableScrollView - Android library to observe scroll events on scrollable views.
-•	Scrollable - Automatic scrolling logic when implementing scrolling tabs
-•	ParallaxPager - ViewPager with Parallax scrolling effects
-•	android-parallax-recyclerview - An adapter which could be used to achieve a parallax effect on RecyclerView.
+ï¿½	QuickReturn - Reveal or hide a header or footer as the list is scrolled in a direction.
+ï¿½	ParallaxPagerTransformer - A pager transformer for Android with parallax effect
+ï¿½	ParallaxHeaderViewPager - Another ViewPager with Parallax scrolling effects
+ï¿½	Android-ObservableScrollView - Android library to observe scroll events on scrollable views.
+ï¿½	Scrollable - Automatic scrolling logic when implementing scrolling tabs
+ï¿½	ParallaxPager - ViewPager with Parallax scrolling effects
+ï¿½	android-parallax-recyclerview - An adapter which could be used to achieve a parallax effect on RecyclerView.
 
                         Debugging
-•	Stetho - A debug bridge for Android applications which could be used for multiple purposes not limited to Network Inspection,
+ï¿½	Stetho - A debug bridge for Android applications which could be used for multiple purposes not limited to Network Inspection,
                 Database Inspection and Javascript Console.
-•	Bugfender - Cloud storage for your app logs, track user behaviour to find problems in your mobile apps.
+ï¿½	Bugfender - Cloud storage for your app logs, track user behaviour to find problems in your mobile apps.
 
 
 

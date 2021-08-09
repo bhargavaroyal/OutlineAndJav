@@ -1,4 +1,4 @@
-package com.bhargavaroyal.outlineandjav.JobScheduler;
+package com.bhargavaroyal.outlineandjav.Service.ForegroundService;
 
 
 import android.app.Notification;
@@ -12,23 +12,25 @@ import android.os.Build;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-class MyAppsNotificationManager {
+import com.bhargavaroyal.outlineandjav.R;
+
+class ForeGroundMyAppsNotificationManager {
 
     private Context context;
 
-    private static MyAppsNotificationManager instance;
+    private static ForeGroundMyAppsNotificationManager instance;
     private NotificationManagerCompat notificationManagerCompat;
     private NotificationManager notificationManager;
 
-    private MyAppsNotificationManager(Context context){
+    private ForeGroundMyAppsNotificationManager(Context context){
         this.context = context;
         notificationManagerCompat = NotificationManagerCompat.from(context);
         notificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
     }
 
-    public static MyAppsNotificationManager getInstance(Context context){
+    public static ForeGroundMyAppsNotificationManager getInstance(Context context){
         if(instance==null){
-            instance = new MyAppsNotificationManager(context);
+            instance = new ForeGroundMyAppsNotificationManager(context);
         }
         return instance;
     }
@@ -47,8 +49,8 @@ class MyAppsNotificationManager {
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 1, intent, 0);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context,context.getString(R.string.channelId))
-                .setSmallIcon(R.drawable.ic_notification)
-                .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_icon_large))
+                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher_background))
                 .setContentTitle(title)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentIntent(pendingIntent)
