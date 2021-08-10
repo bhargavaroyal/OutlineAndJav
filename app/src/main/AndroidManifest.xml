@@ -1,27 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bhargavaroyal.outlineandjav">
+
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <application
+        android:name=".Service.ForegroundService.ForeGroundApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".Service.ForegroundService.ForeGroundApplication"
         android:theme="@style/Theme.OutlineAndJav">
         <activity
-            android:name=".Service.ForegroundService.ForeGroundServiceActivity"
+            android:name=".Service.AsyncTaskService.StartServiceActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.OutlineAndJav.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <service android:name=".Service.ForegroundService.ForeGroundMyIntentService"
-            android:foregroundServiceType="dataSync"/>
-    </application>
+        <activity android:name=".MainActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+        <activity android:name=".Service.HandlerService.StartHandlerServiceActivity" />
+        <activity android:name=".Service.CustomHandlerService.StartCustomHandlerServiceActivity" />
+        <activity android:name=".Service.CustomLooperHandler.CustomLooperServiceActivity" />
+
+        <service
+            android:name=".Service.ForegroundService.ForeGroundMyIntentService"
+            android:foregroundServiceType="dataSync" />
+        <service
+            android:name=".Service.AsyncTaskService.MyAsyncStartService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.service.randomnumbergenerator" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name=".Service.HandlerService.StartHandlerService" />
+    </application>
 </manifest>
