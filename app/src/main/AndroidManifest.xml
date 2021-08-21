@@ -3,6 +3,11 @@
     package="com.bhargavaroyal.outlineandjav">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+
+
     <application
         android:name=".Service.ForegroundService.ForeGroundApplication"
         android:allowBackup="true"
@@ -11,12 +16,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OutlineAndJav">
-        <activity
-            android:name=".Service.AsyncTaskService.StartServiceActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.OutlineAndJav.NoActionBar">
-
-        </activity>
         <activity android:name=".MainActivity">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -27,18 +26,19 @@
         <activity android:name=".Service.HandlerService.StartHandlerServiceActivity" />
         <activity android:name=".Service.CustomHandlerService.StartCustomHandlerServiceActivity" />
         <activity android:name=".Service.CustomLooperHandler.CustomLooperServiceActivity" />
+        <activity android:name=".Service.JobIntentService2.JobIntentService2Activity" />
+        <activity android:name=".Service.BoundServiceIbinder.LocalBoundActivity" />
+        <activity android:name=".Service.BoundMsg.BoundServerSideActivity" />
+        <activity android:name=".Service.IntentServiceBounded.IntentServiceBoundedActivity" />
 
         <service
             android:name=".Service.ForegroundService.ForeGroundMyIntentService"
             android:foregroundServiceType="dataSync" />
-        <service
-            android:name=".Service.AsyncTaskService.MyAsyncStartService"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.service.randomnumbergenerator" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </service>
         <service android:name=".Service.HandlerService.StartHandlerService" />
+        <service android:name=".Service.JobScheduler.BasicJobSchedulerService" />
+        <service android:name=".Service.BoundServiceIbinder.LocalBoundService" />
+        <service android:name=".Service.IntentServiceBounded.IntentServiceBounded" />
+        <service android:name=".Service.JobIntentService.BasicJobIntentService"
+            android:permission="android:permission.BIND_JOB_SERVICE"/>
     </application>
 </manifest>

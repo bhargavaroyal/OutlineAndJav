@@ -23,7 +23,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button_start_async_service"
+        android:id="@+id/button_bound_server_side"
         android:layout_below="@+id/app_title"
         android:clickable="true"
         android:text="@string/string_main_1_async_service"/>
@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button_service_handler"
-        android:layout_below="@+id/button_start_async_service"
+        android:layout_below="@+id/button_bound_server_side"
         android:layout_marginTop="10dp"
         android:text="@string/string_main_2_handler_service"/>
 
@@ -50,5 +50,12 @@
         android:layout_below="@+id/button_service_custom_handler"
         android:layout_marginTop="10dp"
         android:text="@string/string_main_4_custom_looper_service"/>
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_local_bind_service"
+        android:layout_below="@+id/button_service_custom_looper"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:text="@string/string_main_5_local_bound"/>
     </RelativeLayout>

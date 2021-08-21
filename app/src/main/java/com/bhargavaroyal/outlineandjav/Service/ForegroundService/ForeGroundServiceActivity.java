@@ -18,20 +18,8 @@ public class ForeGroundServiceActivity extends AppCompatActivity implements View
     private static final String TAG = ForeGroundServiceActivity.class.getSimpleName();
 
     private Button buttonStart, buttonStop;
-    private TextView textViewthreadCount;
-    int count = 0;
-
-    private ForeGroundMyIntentService myService;
-    private boolean isServiceBound;
-    private ServiceConnection  serviceConnection;
-
-    /*Handler handler;*/
-
-
     private  Intent serviceIntent;
-
     private boolean mStopLoop;
-
 
 
     @Override
@@ -44,7 +32,6 @@ public class ForeGroundServiceActivity extends AppCompatActivity implements View
         buttonStart = (Button) findViewById(R.id.buttonThreadStarter);
         buttonStop = (Button) findViewById(R.id.buttonStopthread);
 
-        textViewthreadCount = (TextView) findViewById(R.id.textViewthreadCount);
 
         buttonStart.setOnClickListener(this);
         buttonStop.setOnClickListener(this);

@@ -1,23 +1,19 @@
-package com.bhargavaroyal.outlineandjav.Service.AsyncTaskService;
-
+package com.bhargavaroyal.outlineandjav.Service.BoundMsg;
 import android.app.Service;
 import android.content.Intent;
-import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
 import android.util.Log;
-
-import com.bhargavaroyal.outlineandjav.R;
+import android.widget.Toast;
 
 import java.util.Random;
 
-/**
- * Created by bhargava on 09/08/21.
- */
-public class MyAsyncStartService extends Service {
+public class BoundServerSideService extends Service {
+
+    private static final String TAG=BoundServerSideService.class.getSimpleName();
 
     private int mRandomNumber;
     private boolean mIsRandomGeneratorOn;
@@ -25,76 +21,63 @@ public class MyAsyncStartService extends Service {
     private final int MIN=0;
     private final int MAX=100;
 
-    public static final int GET_COUNT=0;
+    public static final int GET_RANDOM_NUMBER_FLAG=0;
 
-    private class RandomNumberRequestHandler extends Handler{
+    private class RandomNumberRequestHandler extends Handler {
         @Override
         public void handleMessage(Message msg) {
-            Log.i(getString(R.string.service_demo_tag),"Message intercepted");
+
             switch (msg.what){
-                case GET_COUNT: Message  messageSendRandomNumber=Message.obtain(null,GET_COUNT);
+                case GET_RANDOM_NUMBER_FLAG:
+                    Message  messageSendRandomNumber=Message.obtain(null, GET_RANDOM_NUMBER_FLAG);
                     messageSendRandomNumber.arg1=getRandomNumber();
                     try{
-                        Log.i(getString(R.string.service_demo_tag),"Replaying with random number to requester");
                         msg.replyTo.send(messageSendRandomNumber);
                     }catch (RemoteException e){
-                        Log.i(getString(R.string.service_demo_tag),""+e.getMessage());
+                        Log.i(TAG,""+e.getMessage());
                     }
             }
             super.handleMessage(msg);
         }
     }
 
-    class MyServiceBinder extends Binder{
-        public MyAsyncStartService getService(){
-            return MyAsyncStartService.this;
-        }
-    }
-
-    private IBinder mBinder=new MyServiceBinder();
-
     private Messenger randomNumberMessenger=new Messenger(new RandomNumberRequestHandler());
+
 
     @Override
     public IBinder onBind(Intent intent) {
-        Log.i(getString(R.string.service_demo_tag),"In OnBind");
-        if(intent.getPackage()=="serviceclientapp.youtube.com.messengerserviceclientapp"){
-            return randomNumberMessenger.getBinder();
-        }else{
-            return mBinder;
-        }
+        return randomNumberMessenger.getBinder();
     }
 
     @Override
     public void onRebind(Intent intent) {
         super.onRebind(intent);
-        Log.i(getString(R.string.service_demo_tag),"In OnReBind");
     }
-
 
     @Override
     public void onStart(Intent intent, int startId) {
         super.onStart(intent, startId);
-        Log.i(getString(R.string.service_demo_tag),"Service Started");
     }
+
+
 
     @Override
     public void onDestroy() {
         super.onDestroy();
         stopRandomNumberGenerator();
-        Log.i(getString(R.string.service_demo_tag),"Service Destroyed");
     }
+
+
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.i(getString(R.string.service_demo_tag),"In onStartCommend, thread id: "+Thread.currentThread().getId());
         mIsRandomGeneratorOn =true;
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    startRandomNumberGenerator();
-                }
-            }).start();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                startRandomNumberGenerator();
+            }
+        }).start();
         return START_STICKY;
     }
 
@@ -104,10 +87,10 @@ public class MyAsyncStartService extends Service {
                 Thread.sleep(1000);
                 if(mIsRandomGeneratorOn){
                     mRandomNumber =new Random().nextInt(MAX)+MIN;
-                    Log.i(getString(R.string.service_demo_tag),"Thread id: "+Thread.currentThread().getId()+", Random Number: "+ mRandomNumber);
+                    Log.i(TAG,"Random Number: "+mRandomNumber);
                 }
             }catch (InterruptedException e){
-                Log.i(getString(R.string.service_demo_tag),"Thread Interrupted");
+                Log.i(TAG,"Thread Interrupted");
             }
 
         }
@@ -115,15 +98,18 @@ public class MyAsyncStartService extends Service {
 
     private void stopRandomNumberGenerator(){
         mIsRandomGeneratorOn =false;
+        Toast.makeText(getApplicationContext(),"Service Stopped",Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public boolean onUnbind(Intent intent) {
-        Log.i(getString(R.string.service_demo_tag),"In onUnbind");
+
         return super.onUnbind(intent);
     }
 
     public int getRandomNumber(){
         return mRandomNumber;
     }
+
+
 }

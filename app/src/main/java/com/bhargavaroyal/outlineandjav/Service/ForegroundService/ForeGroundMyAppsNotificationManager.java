@@ -14,7 +14,7 @@ import androidx.core.app.NotificationManagerCompat;
 
 import com.bhargavaroyal.outlineandjav.R;
 
-class ForeGroundMyAppsNotificationManager {
+public class ForeGroundMyAppsNotificationManager {
 
     private Context context;
 

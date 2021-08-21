@@ -16,7 +16,7 @@
     <string name="string_startservice">Start Service</string>
     <string name="string_start_async">start Async Task</string>
     <string name="string_stop_async">Stop async Service</string>
-    <string name="string_main_1_async_service">1 async Service</string>
+    <string name="string_main_1_async_service">1 bound message server Service</string>
     <string name="string_main_2_handler_service">2 handler Service</string>
     <string name="app_title">AndroidOutline</string>
     <string name="string_start_async_activity">Start Async Activity</string>
@@ -24,4 +24,8 @@
     <string name="string_startthread">Start Thread</string>
     <string name="string_main_3_custom_handler_service">3 Custom Handler Service</string>
     <string name="string_main_4_custom_looper_service">4 Custom Looper Service</string>
+    <string name="string_bind">Bind Service</string>
+    <string name="string_unbind">unbind service</string>
+    <string name="string_getrandom_number">get random number</string>
+    <string name="string_main_5_local_bound">5 Local bind service</string>
 </resources>
